@@ -15,8 +15,3 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = ['role']

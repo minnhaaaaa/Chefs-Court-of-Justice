@@ -1,6 +1,12 @@
 # Chefs-Court-of-Justice
 
-This backend was developed using Django and Rest Framework. It uses JWT tokens for authentication with REST API endpoints. The database used here is sqlLite
+This backend was developed using Django and Rest Framework. It uses JWT tokens for authentication with REST API endpoints. The API Points used are:
+1. POST /auth/signup
+2. POST /auth/login
+3. POST /cases/submit
+4. GET /cases/judge/all
+
+The database used here is sqlLite
 The project repository was cloned to a Linux WSL to ensure proper backend development setup. A virtual environment was then created where dependencies that include Django REST Framework and JWT authentication libraries were installed. A Django project was initialized and separate Django apps were created for authentication, case handling, and jury voting. All custom apps and REST framework components were registered in the project settings. Initial database migrations were applied to set up authentication and core tables. A superuser was created to facilitate judge-level testing and administration. The Django development server was successfully run, confirming correct project setup.
 
 Database models were implemented using Django ORM to represent user roles, case submissions, and jury voting with appropriate relationships and constraints. Each user has a one-to-one profile that stores their role, while defendants and plaintiffs can submit multiple case arguments. Each case can receive votes from multiple jurors, and each juror can vote on multiple cases, with a database-level constraint ensuring only one vote per juror per case. These relationships ensure proper access control, data integrity, and fair verdict processing.
